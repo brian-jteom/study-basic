@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
 
 @Slf4j
 @Service
@@ -40,6 +41,7 @@ public class BlogService {
 
     public List<TbBlog> getListAll() {
 
+        List<TbBlog> list = tbBlogRepository.findAll();
         return tbBlogRepository.findAll();
     }
 
